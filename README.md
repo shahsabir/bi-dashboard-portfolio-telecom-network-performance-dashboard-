@@ -1,91 +1,121 @@
-# Telecom & Business Intelligence Portfolio
+# 📡 Telecom Network Performance Dashboard
 
-**Power BI • SQL • Excel • Python • Telecom Analytics**
+**Power BI • SQL • Python • Telecom Analytics • KPI Monitoring**
 
-Business intelligence and analytics portfolio focused on transforming complex operational and telecom data into actionable insights through KPI development, dashboard design, SQL analysis, data modeling, and executive reporting.
+A telecom analytics portfolio project designed to identify network performance degradation, chronic offenders, capacity risks, and optimization priorities across markets and sites.
 
-## Featured Projects
+![Telecom Network Performance Dashboard](dashboard-preview.png)
 
-### 1. Telecom Network Performance Dashboard
+## 🎯 Business Problem
 
-[![Telecom Network Performance Dashboard](telecom-network-performance-dashboard/dashboard-preview.png)](telecom-network-performance-dashboard/)
+Telecom engineering and operations teams manage thousands of network KPIs across markets, sites, and cells.
 
-Analyzes RAN/network performance across markets and sites using accessibility, retainability, throughput, congestion, and composite network-health KPIs.
+The challenge is turning this data into actionable information:
 
-**Highlights:** Market ranking • Worst-performing sites • Chronic offenders • Weekly KPI trends • Capacity risk • Engineering prioritization
+- Which markets are degrading?
+- Which sites are driving poor performance?
+- Are problems temporary or chronic?
+- Where is congestion affecting throughput?
+- Which sites should engineering teams investigate first?
 
-[View Project →](telecom-network-performance-dashboard/)
+This dashboard converts raw network KPI data into an executive and engineering performance view.
 
----
+## 📊 Dashboard Highlights
 
-### 2. Telecom Management Dashboard
+### Network Health
+Tracks overall network performance using a composite **CQx Network Health Score**.
 
-[![Telecom Management Dashboard](telecom-management-dashboard/dashboard-preview.png)](telecom-management-dashboard/)
+### Market Performance
+Compares network health across markets to quickly identify areas requiring attention.
 
-Executive telecom scorecard tracking subscriber growth, churn, service utilization, plan mix, CAPEX efficiency, revenue, and gross-versus-net additions.
+### Worst Performing Sites
+Ranks sites based on KPI degradation and overall network health.
 
-[View Project →](telecom-management-dashboard/)
+### Chronic Offender Analysis
+Identifies sites remaining below performance thresholds for multiple reporting periods.
 
----
+### Capacity Risk
+Analyzes the relationship between **congestion and downlink throughput** to identify potential capacity constraints.
 
-### 3. Telecom Service Operations Dashboard
+### Weekly KPI Trends
+Tracks network performance over time to identify improving or degrading trends.
 
-[![Telecom Service Operations Dashboard](telecom-service-operations-dashboard/dashboard-preview.png)](telecom-service-operations-dashboard/)
+## 📡 KPIs Analyzed
 
-Monitors ticket volume, response and resolution performance, SLA compliance, customer ratings, issue drivers, priority mix, service mix, and monthly demand.
+| KPI | Purpose |
+|---|---|
+| RRC Success Rate | Network accessibility |
+| ERAB Success Rate | Bearer establishment performance |
+| Drop Call Rate | Network retainability |
+| DL Throughput | User data performance |
+| Congestion | Capacity utilization |
+| CQx Score | Composite network health |
 
-[View Project →](telecom-service-operations-dashboard/)
+## 🧮 Network Health Score
 
----
+The project uses a weighted composite KPI:
 
-## Additional BI Projects
+**CQx =**
 
-### 4. Customer Churn Dashboard
+`0.25 × RRC SR`  
+`+ 0.25 × ERAB SR`  
+`+ 0.15 × (100 − DCR)`  
+`+ 0.20 × Throughput`  
+`+ 0.15 × (100 − Congestion)`
 
-[![Customer Churn Dashboard](customer-churn-dashboard/dashboard-preview.png)](customer-churn-dashboard/)
+Performance classification:
 
-Identifies retention risk by plan, tenure, satisfaction, and support activity.
+🟢 **Green:** CQx > 75  
+🟡 **Yellow:** CQx 70–75  
+🔴 **Red:** CQx < 70
 
-### 5. Advanced Tech Support Operations Analysis
+## 🔍 Example Business Insights
 
-[![Advanced Tech Support Dashboard](advanced-tech-support-dashboard/dashboard-preview.png)](advanced-tech-support-dashboard/)
+The analysis allows network teams to:
 
-Analyzes ticket funnels, SLA attainment, CSAT, issue categories, hourly patterns, and regional workload.
+- Identify markets contributing most to network degradation
+- Rank worst-performing sites
+- Detect recurring/chronic network issues
+- Separate capacity problems from general KPI degradation
+- Prioritize optimization activities
+- Monitor whether corrective actions improve performance
 
-### 6. Sales Performance Dashboard
+## 🛠️ Technical Skills Demonstrated
 
-[![Sales Performance Dashboard](sales-performance-dashboard/dashboard-preview.png)](sales-performance-dashboard/)
+**Business Intelligence**
+- Power BI
+- Dashboard design
+- KPI development
+- Executive reporting
 
-Analyzes revenue, profit, margin, units, monthly performance, and regional results.
+**Data Analytics**
+- SQL
+- Python
+- Data aggregation
+- Trend analysis
+- Ranking and exception reporting
 
-### 7. Advanced Supply Chain & Inventory Analytics
+**Telecom Analytics**
+- RAN performance analysis
+- Accessibility
+- Retainability
+- Throughput
+- Congestion
+- Capacity analysis
+- Chronic offender identification
 
-[![Advanced Supply Chain Dashboard](advanced-supply-chain-dashboard/dashboard-preview.png)](advanced-supply-chain-dashboard/)
+## 📂 Repository Contents
 
-Demonstrates demand forecasting, supplier scoring, inventory-risk modeling, safety-stock analysis, and operational exception reporting.
+| File | Description |
+|---|---|
+| `dashboard-preview.png` | Executive dashboard preview |
+| `telecom_network_kpi_sample.csv` | Synthetic weekly network KPI dataset |
+| `site_priority_summary.csv` | Site ranking and chronic-offender summary |
+| `analysis.sql` | SQL KPI analysis and ranking examples |
+| `KPI_DEFINITIONS.md` | KPI definitions and business logic |
 
-### 8. Workforce Analytics Dashboard
+## 🔐 Data Privacy
 
-[![Workforce Analytics Dashboard](workforce-analytics-dashboard/dashboard-preview.png)](workforce-analytics-dashboard/)
+All data in this project is **synthetic and created exclusively for portfolio demonstration**.
 
-Summarizes headcount, engagement, training, performance, and attrition.
-
----
-
-## Core Skills
-
-**Business Intelligence:** Power BI • Tableau • Excel • Dashboard Design • KPI Development
-
-**Data & Analytics:** SQL • Python • Data Modeling • Trend Analysis • Data Visualization
-
-**Telecom Analytics:** RAN Performance • Accessibility • Retainability • Throughput • Congestion • Capacity • Network KPI Analysis
-
-**Business Analysis:** Requirements Gathering • Stakeholder Reporting • Root Cause Analysis • Process Improvement • Executive Reporting
-
----
-
-## Portfolio Focus
-
-My projects demonstrate how data can be transformed into clear business and operational decisions—from identifying network performance issues and chronic offenders to analyzing customers, service operations, sales, workforce, and supply-chain performance.
-
-> All datasets used in this portfolio are synthetic and created solely for demonstration. No proprietary network, customer, or employee information is included.# bi-dashboard-portfolio-telecom-network-performance-dashboard-
+No proprietary network, customer, site, carrier, or employee information is included.
