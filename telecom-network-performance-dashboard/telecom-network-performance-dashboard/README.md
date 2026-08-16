@@ -1,36 +1,121 @@
-# Telecom Network Performance Dashboard
+# 📡 Telecom Network Performance Dashboard
 
-A portfolio project that demonstrates how telecom/RAN performance data can be transformed into an executive-friendly BI view for engineering and operations teams.
+**Power BI • SQL • Python • Telecom Analytics • KPI Monitoring**
 
-## Business problem
+A telecom analytics portfolio project designed to identify network performance degradation, chronic offenders, capacity risks, and optimization priorities across markets and sites.
 
-Network teams need a fast way to identify degrading markets and sites, quantify chronic offenders, and prioritize optimization work using accessibility, retainability, throughput, and congestion KPIs.
+![Telecom Network Performance Dashboard](dashboard-preview.png)
 
-## Dashboard views
+## 🎯 Business Problem
 
-- Executive network health scorecard
-- Market-level KPI ranking
-- Site-level worst performer table
-- Weekly CQx trend
-- Chronic offender / weeks-on-report analysis
-- Accessibility and retainability tracking
-- Throughput and congestion analysis
-- Engineering priority ranking
+Telecom engineering and operations teams manage thousands of network KPIs across markets, sites, and cells.
 
-## Tools demonstrated
+The challenge is turning this data into actionable information:
 
-**Power BI • SQL • Excel • Python • Telecom Analytics**
+- Which markets are degrading?
+- Which sites are driving poor performance?
+- Are problems temporary or chronic?
+- Where is congestion affecting throughput?
+- Which sites should engineering teams investigate first?
 
-## Files
+This dashboard converts raw network KPI data into an executive and engineering performance view.
 
-- `telecom_network_kpi_sample.csv` — synthetic weekly KPI dataset
-- `site_priority_summary.csv` — latest site snapshot with chronic-offender count
-- `analysis.sql` — sample SQL for KPI ranking and exception analysis
-- `KPI_DEFINITIONS.md` — KPI logic and threshold definitions
-- `dashboard-preview.png` — recruiter-friendly dashboard mockup
+## 📊 Dashboard Highlights
 
-## Key portfolio takeaway
+### Network Health
+Tracks overall network performance using a composite **CQx Network Health Score**.
 
-This project demonstrates the ability to move from raw telecom KPI data to prioritized operational insights: identifying where performance is degrading, how long the issue has persisted, and which sites should be investigated first.
+### Market Performance
+Compares network health across markets to quickly identify areas requiring attention.
 
-> All data is synthetic and created for portfolio demonstration only. No proprietary network, customer, or employee data is included.
+### Worst Performing Sites
+Ranks sites based on KPI degradation and overall network health.
+
+### Chronic Offender Analysis
+Identifies sites remaining below performance thresholds for multiple reporting periods.
+
+### Capacity Risk
+Analyzes the relationship between **congestion and downlink throughput** to identify potential capacity constraints.
+
+### Weekly KPI Trends
+Tracks network performance over time to identify improving or degrading trends.
+
+## 📡 KPIs Analyzed
+
+| KPI | Purpose |
+|---|---|
+| RRC Success Rate | Network accessibility |
+| ERAB Success Rate | Bearer establishment performance |
+| Drop Call Rate | Network retainability |
+| DL Throughput | User data performance |
+| Congestion | Capacity utilization |
+| CQx Score | Composite network health |
+
+## 🧮 Network Health Score
+
+The project uses a weighted composite KPI:
+
+**CQx =**
+
+`0.25 × RRC SR`  
+`+ 0.25 × ERAB SR`  
+`+ 0.15 × (100 − DCR)`  
+`+ 0.20 × Throughput`  
+`+ 0.15 × (100 − Congestion)`
+
+Performance classification:
+
+🟢 **Green:** CQx > 75  
+🟡 **Yellow:** CQx 70–75  
+🔴 **Red:** CQx < 70
+
+## 🔍 Example Business Insights
+
+The analysis allows network teams to:
+
+- Identify markets contributing most to network degradation
+- Rank worst-performing sites
+- Detect recurring/chronic network issues
+- Separate capacity problems from general KPI degradation
+- Prioritize optimization activities
+- Monitor whether corrective actions improve performance
+
+## 🛠️ Technical Skills Demonstrated
+
+**Business Intelligence**
+- Power BI
+- Dashboard design
+- KPI development
+- Executive reporting
+
+**Data Analytics**
+- SQL
+- Python
+- Data aggregation
+- Trend analysis
+- Ranking and exception reporting
+
+**Telecom Analytics**
+- RAN performance analysis
+- Accessibility
+- Retainability
+- Throughput
+- Congestion
+- Capacity analysis
+- Chronic offender identification
+
+## 📂 Repository Contents
+
+| File | Description |
+|---|---|
+| `dashboard-preview.png` | Executive dashboard preview |
+| `telecom_network_kpi_sample.csv` | Synthetic weekly network KPI dataset |
+| `site_priority_summary.csv` | Site ranking and chronic-offender summary |
+| `analysis.sql` | SQL KPI analysis and ranking examples |
+| `KPI_DEFINITIONS.md` | KPI definitions and business logic |
+
+## 🔐 Data Privacy
+
+All data in this project is **synthetic and created exclusively for portfolio demonstration**.
+
+No proprietary network, customer, site, carrier, or employee information is included.
